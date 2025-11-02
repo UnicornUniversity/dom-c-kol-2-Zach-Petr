@@ -45,17 +45,15 @@ export function permittedOutputSystems() {
 }
 /**
  * Hlavní funkce programu.
+ * @param {number} [A] Číslo v desítkové soustavě; pokud není, použije se 0.
  */
-export function main() {
-/* global prompt */
-let answer = prompt("Zadej číslo v desítkové soustavě:");
-const A = Number(answer);
+export function main(A = 0) {
+    // Pouze převod a výpis
+    let vysledek1 = Převod(A, 2);
+    let vysledek2 = Převod(A, 8);
+    let vysledek3 = PřevodNa16(A);
 
-let vysledek1 = Převod(A, 2);
-let vysledek2 = Převod(A, 8);
-let vysledek3 = PřevodNa16(A);
-
-console.log(`Číslo: ${A}
+    console.log(`Číslo: ${A}
 je v dvojkové soustavě: ${vysledek1},
 v osmičkové soustavě: ${vysledek2},
 a v šestnáckové soustavě: ${vysledek3}.`);
