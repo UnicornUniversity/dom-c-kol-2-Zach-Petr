@@ -24,7 +24,7 @@ export function PřevodNa16(a){
     const hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     let vysledek = "";
     while(a > 0){
-       vysledek = String(hex[a % 16]) + vysledek;
+        vysledek = String(hex[a % 16]) + vysledek;
         a = Math.floor(a / 16);
     }
     return vysledek;
@@ -53,17 +53,12 @@ export function permittedOutputSystems() {
  * @returns {object} Objekt s vlastnostmi {decimal, binary, octal, hex}.
  */
 export function main(A) {
-    if (A === undefined) A = 0; // výchozí hodnota přímo v kódu
-
-    const vysledek1 = Převod(A, 2);
-    const vysledek2 = Převod(A, 8);
-    const vysledek3 = PřevodNa16(A);
+    const n = (A === undefined) ? 0 : A; // výchozí hodnota
 
     return {
-        decimal: String(A),
-        binary: String(vysledek1),
-        octal: String(vysledek2),
-        hex: String(vysledek3)
+        decimal: String(n),
+        binary: String(Převod(n, 2)),
+        octal: String(Převod(n, 8)),
+        hex: String(PřevodNa16(n))
     };
 }
-
