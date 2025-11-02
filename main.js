@@ -40,6 +40,7 @@ export function PřevodNa16(a) {
  */
 export function permittedInputSystems() {
     return [10];
+}
 /**
  * Hlavní funkce programu.
  * Převádí číslo do binární, osmičkové a šestnáckové soustavy.
