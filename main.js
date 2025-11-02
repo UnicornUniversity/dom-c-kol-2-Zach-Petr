@@ -18,7 +18,7 @@ export function PřevodNa16(a){
     }
     return vysledek;
 }
-
+/* global prompt */
 let answer = prompt("Zadej číslo v desítkové soustavě:");
 const A = Number(answer);
 
