@@ -33,23 +33,6 @@ export function PřevodNa16(a) {
     }
     return vysledek;
 }
-
-/**
- * Povolené vstupní soustavy.
- * @returns {number[]} Pole povolených vstupních soustav.
- */
-export function permittedInputSystems() {
-    return [10];
-}
-
-/**
- * Povolené výstupní soustavy.
- * @returns {number[]} Pole povolených výstupních soustav.
- */
-export function permittedOutputSystems() {
-    return [2, 8, 16];
-}
-
 /**
  * Hlavní funkce programu.
  * Převádí číslo do binární, osmičkové a šestnáckové soustavy.
@@ -69,13 +52,13 @@ export function main(A) {
     }
 
     // Použijeme původní převody
-    const bin = Převod(n, 2);
-    const oct = Převod(n, 8);
-    const hex = PřevodNa16(n);
+    const vysledek2 = Převod(n, 2);
+    const vysledek8 = Převod(n, 8);
+    const vysledek16 = PřevodNa16(n);
 
     // Vracíme formátovaný výstup
     return `Číslo: ${n}
-je v dvojkové soustavě: ${bin},
-v osmičkové soustavě: ${oct},
-a v šestnáctkové soustavě: ${hex}.`;
+je v dvojkové soustavě: ${vysledek2},
+v osmičkové soustavě: ${vysledek8},
+a v šestnáctkové soustavě: ${vysledek16}.`;
 }
