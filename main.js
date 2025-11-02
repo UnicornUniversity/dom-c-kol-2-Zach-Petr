@@ -30,13 +30,19 @@ export function PřevodNa16(a){
 }
 /**
  * Povolené vstupní soustavy.
+ * @returns {number[]} Pole povolených vstupních soustav.
  */
-export const permittedInputSystems = [2, 8, 10, 16];
+export function permittedInputSystems() {
+    return [2, 8, 10, 16];
+}
 
 /**
  * Povolené výstupní soustavy.
+ * @returns {number[]} Pole povolených výstupních soustav.
  */
-export const permittedOutputSystems = [2, 8, 10, 16];
+export function permittedOutputSystems() {
+    return [2, 8, 10, 16];
+}
 /**
  * Hlavní funkce programu.
  */
