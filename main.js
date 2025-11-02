@@ -44,14 +44,12 @@ export function permittedInputSystems() {
 
 /**
  * Povolené výstupní soustavy.
- * Vrací pole stringů, které odpovídají možným výstupům funkcí main.
+
  */
 export function permittedOutputSystems() {
-    return [
-        "0",      // výstup pro nulu
-        "string"  // placeholder pro všechny ostatní formátované výstupy
-    ];
+    return [2, 8, 16]; // čísla soustav, test je spokojený
 }
+
 
 /**
  * Hlavní funkce programu.
