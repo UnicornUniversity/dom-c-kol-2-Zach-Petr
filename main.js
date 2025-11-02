@@ -64,6 +64,7 @@ export function main(A, outputSystem) {
 
 switch (outputSystem) {
     case 2:
+        return Převod(n, outputSystem);
     case 8:
         return Převod(n, outputSystem);
     case 16:
