@@ -1,35 +1,72 @@
-//TODO add imports if needed
-//import { exMain } from "./exclude/exampleAss2.js"
-//TODO add/change doc as needed
-/**
- * TODO - Write functional code for this application. You can call any other function, but usage of ".toString(numberSystem)" and "Number.parseInt(number, numberSystem)" is forbidden (only permitted when used on individual digits).
- * The main function which calls the application. 
- * TODO - Please, add specific description here for the application purpose.
- * @param {string} inputNumber number that is being converted
- * @param {number} inputNumberSystem numerical system that the inputNumber is being converted from
- * @param {number} outputNumberSystem numerical system that the inputNumber is being converted into
- * @returns {string} containing number converted to output system
- */
-export function main(inputNumber, inputNumberSystem, outputNumberSystem) {
-  //TODO code
-  //let dtoOut = exMain(inputNumber, inputNumberSystem, outputNumberSystem);
-  return dtoOut;
+function PřevodNa2(a){
+    let b = NaN; //proměnná pro ukládání zbytku a values mapy
+    let c = 0; // proměnná pro počet opakování a klíče mapy
+    let mapa = new Map(); // mapa pro ukládání výsledků
+    while(a > 0){
+        b = a % 2;
+        mapa.set(c , b);
+        a = Math.floor (a / 2);
+        c++;
+    }
+    let hodnoty = Array.from(mapa.values()).reverse();
+    let vysledek = hodnoty.join("");
+    return vysledek;
 }
+function PřevodNa8(a){
+    let b = NaN; //proměnná pro ukládání zbytku a values mapy
+    let c = 0; // proměnná pro počet opakování a klíče mapy
+    let mapa = new Map(); // mapa pro ukládání výsledků
+    while(a > 0){
+        b = a % 8;
+        mapa.set(c , b);
+        a = Math.floor (a / 8);
+        c++;
+    }
+    let hodnoty = Array.from(mapa.values()).reverse();
+    let vysledek = hodnoty.join("");
+    return vysledek;
+}
+function PřevodNa16(a){
+    let b = NaN; //proměnná pro ukládání zbytku a values mapy
+    let c = 0; // proměnná pro počet opakování a klíče mapy
+    let mapa = new Map(); // mapa pro ukládání výsledků
+    while(a > 0){
+        b = a % 16;
+        if(b === 10){
+            b = "A";         // převádění zbytků na čísla
+        }
+        else if(b === 11){
+            b = "B";
+        }
+        else if(b === 12){
+            b = "C";
+        }
+        else if(b === 13){
+            b = "D";
+        }
+        else if(b === 14){
+            b = "E";
+        }
+        else if (b === 15){
+            b = "F";
+        }
+        mapa.set(c , b);
+        a = Math.floor (a / 16);
+        c++;
+    }
+    let hodnoty = Array.from(mapa.values()).reverse();
+    let vysledek = hodnoty.join("");
+    return vysledek;
+}
+let answer = prompt("Zadej číslo v desítkové soustavě:");
 
-/**
- * TODO - Change this to contain all input number systems that your application can convert from.
- * Function which returns which number systems are permitted on input.
- * @returns {Array} array of numbers refering to permitted input systems
- */
-export function permittedInputSystems() {
-	return [10, 2];
-}
 
-/**
- * TODO - Change this to contain all output number systems that your application can convert to.
- * Function which returns which number systems are permitted on output.
- * @returns {Array} array of numbers refering to permitted output systems
- */
-export function permittedOutputSystems() {
-	return [10, 2];
-}
+const A = Number(answer);
+let vysledek1 = PřevodNa2(A);
+let vysledek2 = PřevodNa8(A);
+let vysledek3 = PřevodNa16(A);
+console.log(`Číslo: ${A}
+je v dvojkové soustavě: ${vysledek1},
+v osmičkové soustavě: ${vysledek2}
+a v šestnáckové soustavě: ${vysledek3}.`);
+
