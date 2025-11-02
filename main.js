@@ -48,13 +48,14 @@ export function permittedOutputSystems() {
  * @param {number} [A] Číslo v desítkové soustavě; pokud není, použije se 0.
  */
 export function main(A = 0) {
-    // Pouze převod a výpis
-    let vysledek1 = Převod(A, 2);
-    let vysledek2 = Převod(A, 8);
-    let vysledek3 = PřevodNa16(A);
+    const vysledek1 = Převod(A, 2);
+    const vysledek2 = Převod(A, 8);
+    const vysledek3 = PřevodNa16(A);
 
-    console.log(`Číslo: ${A}
-je v dvojkové soustavě: ${vysledek1},
-v osmičkové soustavě: ${vysledek2},
-a v šestnáckové soustavě: ${vysledek3}.`);
+    return {
+        decimal: A,
+        binary: vysledek1,
+        octal: vysledek2,
+        hex: vysledek3
+    };
 }
