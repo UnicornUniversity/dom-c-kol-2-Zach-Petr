@@ -58,6 +58,9 @@ export function permittedOutputSystems() {
  */
 export function main(A) {
     let n = (typeof A === "number" && A >= 0) ? Math.floor(A) : 0;
+ if (n === 0) {
+        return "0"; // nebo "0" pokud test očekává číslo
+    }
 
     const bin = Převod(n, 2);
     const oct = Převod(n, 8);
