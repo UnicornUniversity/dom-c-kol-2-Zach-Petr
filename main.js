@@ -1,32 +1,18 @@
-function PřevodNa2(a){
+export function Převod(a, s){
     let b = NaN; //proměnná pro ukládání zbytku a values mapy
     let c = 0; // proměnná pro počet opakování a klíče mapy
     let mapa = new Map(); // mapa pro ukládání výsledků
     while(a > 0){
-        b = a % 2;
+        b = a % s;
         mapa.set(c , b);
-        a = Math.floor (a / 2);
+        a = Math.floor (a / s);
         c++;
     }
     let hodnoty = Array.from(mapa.values()).reverse();
     let vysledek = hodnoty.join("");
     return vysledek;
 }
-function PřevodNa8(a){
-    let b = NaN; //proměnná pro ukládání zbytku a values mapy
-    let c = 0; // proměnná pro počet opakování a klíče mapy
-    let mapa = new Map(); // mapa pro ukládání výsledků
-    while(a > 0){
-        b = a % 8;
-        mapa.set(c , b);
-        a = Math.floor (a / 8);
-        c++;
-    }
-    let hodnoty = Array.from(mapa.values()).reverse();
-    let vysledek = hodnoty.join("");
-    return vysledek;
-}
-function PřevodNa16(a){
+export function PřevodNa16(a){
     let b = NaN; //proměnná pro ukládání zbytku a values mapy
     let c = 0; // proměnná pro počet opakování a klíče mapy
     let mapa = new Map(); // mapa pro ukládání výsledků
@@ -61,9 +47,10 @@ function PřevodNa16(a){
 let answer = prompt("Zadej číslo v desítkové soustavě:");
 
 
+
 const A = Number(answer);
-let vysledek1 = PřevodNa2(A);
-let vysledek2 = PřevodNa8(A);
+let vysledek1 = Převod(A, 2);
+let vysledek2 = Převod(A, 8);
 let vysledek3 = PřevodNa16(A);
 console.log(`Číslo: ${A}
 je v dvojkové soustavě: ${vysledek1},
