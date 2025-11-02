@@ -57,19 +57,20 @@ export function permittedOutputSystems() {
  * @param {number} A Číslo v desítkové soustavě.
  * @returns {string} Formátovaný řetězec s převody čísla nebo "0" pro chybný vstup.
  */
-export function main(A, outputSystem = null) {
+export function main(A, outputSystem) {
     if (typeof A !== "number" || isNaN(A) || A < 0) return "0";
     const n = Math.floor(A);
     if (n === 0) return "0";
 
-    if (outputSystem === 2) return Převod(n, 2);
-    if (outputSystem === 8) return Převod(n, 8);
-    if (outputSystem === 16) return PřevodNa16(n);
+switch (outputSystem) {
+    case 2:
+    case 8:
+        return Převod(n, outputSystem);
+    case 16:
+        return PřevodNa16(n);
+    default:
+        return "0";
+}
 
-    // Pokud žádná soustava, můžeš vrátit formátovaný string
-    const bin = Převod(n, 2);
-    const oct = Převod(n, 8);
-    const hex = PřevodNa16(n);
-    return `Číslo: ${n}\nje v dvojkové soustavě: ${bin},\nv osmičkové soustavě: ${oct},\na v šestnáctkové soustavě: ${hex}.`;
 }
 
