@@ -65,13 +65,19 @@ export function main(A) {
     const n = Math.floor(A);
     if (n === 0) return "0";
 
-    const vysledek2 = Převod(n, 2);
-    const vysledek8 = Převod(n, 8);
-    const vysledek16 = PřevodNa16(n);
-
-    return `Číslo: ${n}
+   switch(outputSystem) {
+        case 2: return Převod(n, 2);
+        case 8: return Převod(n, 8);
+        case 16: return PřevodNa16(n);
+        default: {
+            const vysledek2 = Převod(n, 2);
+            const vysledek8 = Převod(n, 8);
+            const vysledek16 = PřevodNa16(n);
+            return `Číslo: ${n}
 je v dvojkové soustavě: ${vysledek2},
 v osmičkové soustavě: ${vysledek8},
 a v šestnáctkové soustavě: ${vysledek16}.`;
+        }
+    }
 }
 
