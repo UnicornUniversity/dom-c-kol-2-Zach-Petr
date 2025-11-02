@@ -44,34 +44,33 @@ export function permittedInputSystems() {
 
 /**
  * Povolené výstupní soustavy.
-
+ * @returns {number[]} Pole povolených výstupních soustav (2, 8, 16).
  */
 export function permittedOutputSystems() {
-    return [2, 8, 16]; // čísla soustav
+    return [2, 8, 16];
 }
-
 
 /**
  * Hlavní funkce programu.
- * Převádí číslo do binární, osmičkové a šestnáctkové soustavy.
+ * Převádí číslo do požadované soustavy.
  * @param {number} A Číslo v desítkové soustavě.
- * @returns {string} Formátovaný řetězec s převody čísla nebo "0" pro chybný vstup.
+ * @param {number} outputSystem Výstupní soustava (2, 8, 16).
+ * @returns {string} Převod čísla do požadované soustavy nebo "0" pro chybný vstup.
  */
 export function main(A, outputSystem) {
     if (typeof A !== "number" || isNaN(A) || A < 0) return "0";
     const n = Math.floor(A);
     if (n === 0) return "0";
 
-switch (outputSystem) {
-    case 2:
-        return Převod(n, outputSystem);
-    case 8:
-        return Převod(n, outputSystem);
-    case 16:
-        return PřevodNa16(n);
-    default:
-        return "0";
+    switch (outputSystem) {
+        case 2:
+        case 8:
+            return Převod(n, outputSystem);
+        case 16:
+            return PřevodNa16(n);
+        default:
+            return "0";
+    }
 }
 
-}
 
