@@ -45,7 +45,9 @@ export function permittedOutputSystems() {
 }
 /**
  * Hlavní funkce programu.
- * @param {number} [A] Číslo v desítkové soustavě; pokud není, použije se 0.
+ * Převádí číslo do binární, osmičkové a hexadecimální soustavy.
+ * @param {number} [A=0] Číslo v desítkové soustavě.
+ * @returns {object} Objekt s vlastnostmi {decimal, binary, octal, hex}.
  */
 export function main(A = 0) {
     const vysledek1 = Převod(A, 2);
@@ -53,7 +55,7 @@ export function main(A = 0) {
     const vysledek3 = PřevodNa16(A);
 
     return {
-        decimal: A,
+        decimal: String(A),
         binary: vysledek1,
         octal: vysledek2,
         hex: vysledek3
