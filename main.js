@@ -34,6 +34,13 @@ export function PřevodNa16(a) {
     return vysledek;
 }
 /**
+ * podmínky vstupu
+ * Převádí číslo do binární, osmičkové a šestnáckové soustavy.
+ * @param {number}  Číslo v desítkové soustavě.
+ */
+export function permittedInputSystems() {
+    return [10];
+/**
  * Hlavní funkce programu.
  * Převádí číslo do binární, osmičkové a šestnáckové soustavy.
  * @param {number} A Číslo v desítkové soustavě.
