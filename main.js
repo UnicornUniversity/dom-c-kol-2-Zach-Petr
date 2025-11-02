@@ -47,7 +47,7 @@ export function permittedInputSystems() {
 
  */
 export function permittedOutputSystems() {
-    return [2, 8, 16]; // čísla soustav, test je spokojený
+    return [2, 8, 16]; // čísla soustav
 }
 
 
@@ -57,27 +57,19 @@ export function permittedOutputSystems() {
  * @param {number} A Číslo v desítkové soustavě.
  * @returns {string} Formátovaný řetězec s převody čísla nebo "0" pro chybný vstup.
  */
-export function main(A) {
-    if (typeof A !== "number" || isNaN(A) || A < 0) {
-        return "0"; // bezpečný fallback pro testy
-    }
-
+export function main(A, outputSystem = null) {
+    if (typeof A !== "number" || isNaN(A) || A < 0) return "0";
     const n = Math.floor(A);
     if (n === 0) return "0";
 
-   switch(outputSystem) {
-        case 2: return Převod(n, 2);
-        case 8: return Převod(n, 8);
-        case 16: return PřevodNa16(n);
-        default: {
-            const vysledek2 = Převod(n, 2);
-            const vysledek8 = Převod(n, 8);
-            const vysledek16 = PřevodNa16(n);
-            return `Číslo: ${n}
-je v dvojkové soustavě: ${vysledek2},
-v osmičkové soustavě: ${vysledek8},
-a v šestnáctkové soustavě: ${vysledek16}.`;
-        }
-    }
+    if (outputSystem === 2) return Převod(n, 2);
+    if (outputSystem === 8) return Převod(n, 8);
+    if (outputSystem === 16) return PřevodNa16(n);
+
+    // Pokud žádná soustava, můžeš vrátit formátovaný string
+    const bin = Převod(n, 2);
+    const oct = Převod(n, 8);
+    const hex = PřevodNa16(n);
+    return `Číslo: ${n}\nje v dvojkové soustavě: ${bin},\nv osmičkové soustavě: ${oct},\na v šestnáctkové soustavě: ${hex}.`;
 }
 
