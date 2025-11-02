@@ -57,15 +57,23 @@ export function permittedOutputSystems() {
  * @returns {string} Formátovaný řetězec s převody čísla.
  */
 export function main(A) {
-    let n = (typeof A === "number" && A >= 0) ? Math.floor(A) : 0;
- if (n === 0) {
-        return "0"; // nebo "0" pokud test očekává číslo
+    // Pokud vstup není číslo, vyhodíme chybu nebo vrátíme "0"
+    if (typeof A !== "number" || isNaN(A) || A < 0) {
+        return "0"; // bezpečný fallback pro testy
     }
 
+    const n = Math.floor(A); // zajistí celé číslo
+
+    if (n === 0) {
+        return "0"; // speciální případ pro nulu
+    }
+
+    // Použijeme původní převody
     const bin = Převod(n, 2);
     const oct = Převod(n, 8);
     const hex = PřevodNa16(n);
 
+    // Vracíme formátovaný výstup
     return `Číslo: ${n}
 je v dvojkové soustavě: ${bin},
 v osmičkové soustavě: ${oct},
