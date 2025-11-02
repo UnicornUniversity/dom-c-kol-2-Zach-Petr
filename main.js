@@ -28,6 +28,19 @@ export function PřevodNa16(a){
     }
     return vysledek;
 }
+/**
+ * Povolené vstupní soustavy.
+ */
+export const permittedInputSystems = [2, 8, 10, 16];
+
+/**
+ * Povolené výstupní soustavy.
+ */
+export const permittedOutputSystems = [2, 8, 10, 16];
+/**
+ * Hlavní funkce programu.
+ */
+export function main() {
 /* global prompt */
 let answer = prompt("Zadej číslo v desítkové soustavě:");
 const A = Number(answer);
@@ -40,3 +53,4 @@ console.log(`Číslo: ${A}
 je v dvojkové soustavě: ${vysledek1},
 v osmičkové soustavě: ${vysledek2},
 a v šestnáckové soustavě: ${vysledek3}.`);
+}
