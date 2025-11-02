@@ -1,7 +1,7 @@
 /**
  * Převádí nezáporné celé číslo do zvolené soustavy (2, 8, 10).
  * @param {number} a Číslo v desítkové soustavě.
- * @param {number} s Základ nové soustavy (2, 8, 10).
+ * @param {number} s Dělitel nové soustavy (2, 8).
  * @returns {string} Číslo převedené do zvolené soustavy.
  */
 export function Převod(a, s) {
@@ -19,7 +19,7 @@ export function Převod(a, s) {
 /**
  * Převádí nezáporné celé číslo do šestnáctkové soustavy.
  * @param {number} a Číslo v desítkové soustavě.
- * @returns {string} Číslo v hexadecimální soustavě (A-F velká písmena).
+ * @returns {string} Číslo v šestnáckové soustavě (A-F velká písmena).
  */
 export function PřevodNa16(a) {
     if (typeof a !== "number" || a < 0) a = 0;
@@ -39,7 +39,7 @@ export function PřevodNa16(a) {
  * @returns {number[]} Pole povolených vstupních soustav.
  */
 export function permittedInputSystems() {
-    return [2, 8, 10, 16];
+    return [10];
 }
 
 /**
@@ -47,12 +47,12 @@ export function permittedInputSystems() {
  * @returns {number[]} Pole povolených výstupních soustav.
  */
 export function permittedOutputSystems() {
-    return [2, 8, 10, 16];
+    return [2, 8, 16];
 }
 
 /**
  * Hlavní funkce programu.
- * Převádí číslo do binární, osmičkové a hexadecimální soustavy.
+ * Převádí číslo do binární, osmičkové a šestnáckové soustavy.
  * @param {number} A Číslo v desítkové soustavě.
  * @returns {string} Formátovaný řetězec s převody čísla.
  */
