@@ -8,8 +8,6 @@ export function Převod(a, s) {
     if (typeof a !== "number" || a < 0) a = 0;
     a = Math.floor(a);
     if (a === 0) return "0";
-    outputSystem = Number(outputSystem);
-    if (![2, 8].includes(outputSystem)) return "0";
     let vysledek = "";
     while (a > 0) {
         vysledek = String(a % s) + vysledek;
@@ -45,6 +43,8 @@ export function permittedOutputSystems() {
 export function main(A, outputSystem) {
    A = Number(A);
    outputSystem = Number(outputSystem);
+      console.log("A =", A, typeof A);
+    console.log("outputSystem =", outputSystem, typeof outputSystem);
     if (isNaN(A) || A < 0) return "0";
 
     const n = Math.floor(A);
