@@ -25,7 +25,7 @@ export function PřevodNa16(a){
     const hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     let vysledek = "";
     while(a > 0){
-        vysledek = hex[a % 16] + vysledek;
+        vysledek = String[a % 16] + vysledek;
         a = Math.floor(a / 16);
     }
     return vysledek;
@@ -67,9 +67,11 @@ export function main(A, inputSystem, outputSystem) {
 if (![2, 8, 16].includes(outputSystem)) return "0";
 
 if(outputSystem === 16){
-    return Převodna16(n);
+    return PřevodNa16(n);
 }
+    else{
     return Převod(n, outputSystem);
+    }
     }
 
 
