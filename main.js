@@ -42,7 +42,6 @@ export function permittedOutputSystems() {
  */
 export function main(A) {
    A = Number(A);
-    outputSystem = Number(outputSystem)
     if (isNaN(A) || A < 0) return "0";
 
     const n = Math.floor(A);
