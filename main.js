@@ -25,7 +25,7 @@ export function PřevodNa16(a){
     const hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     let vysledek = "";
     while(a > 0){
-        vysledek = String[a % 16] + vysledek;
+        vysledek = hex[a % 16] + vysledek;
         a = Math.floor(a / 16);
     }
     return vysledek;
@@ -56,8 +56,6 @@ export function permittedOutputSystems() {
  */
 export function main(A, inputSystem, outputSystem) {
    A = Number(A);
-   outputSystem = Number(outputSystem);
-    inputSystem = Number(inputSystem);
       console.log("A =", A, typeof A);
     console.log("outputSystem =", outputSystem, typeof outputSystem);
     if (isNaN(A) || A < 0) return "0";
