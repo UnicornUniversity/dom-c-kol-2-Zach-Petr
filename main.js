@@ -1,7 +1,7 @@
 /**
- * Převádí nezáporné celé číslo do zvolené soustavy (2, 8, 10).
+ * Převádí nezáporné celé číslo do zvolené soustavy (2).
  * @param {number} a Číslo v desítkové soustavě.
- * @param {number} s Dělitel nové soustavy (2, 8).
+ * @param {number} s Dělitel nové soustavy (2).
  * @returns {string} Číslo převedené do zvolené soustavy.
  */
 export function Převod(a, s) {
@@ -16,23 +16,6 @@ export function Převod(a, s) {
     return vysledek;
 }
 
-/**
- * Převádí nezáporné celé číslo do šestnáctkové soustavy.
- * @param {number} a Číslo v desítkové soustavě.
- * @returns {string} Číslo v šestnáctkové soustavě (A-F velká písmena).
- */
-export function PřevodNa16(a) {
-    if (typeof a !== "number" || a < 0) a = 0;
-    a = Math.floor(a);
-    if (a === 0) return "0";
-    const hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
-    let vysledek = "";
-    while (a > 0) {
-        vysledek = hex[a % 16] + vysledek;
-        a = Math.floor(a / 16);
-    }
-    return vysledek;
-}
 
 /**
  * Povolené vstupní soustavy.
@@ -47,7 +30,7 @@ export function permittedInputSystems() {
  * @returns {number[]} Pole povolených výstupních soustav (2, 8, 16).
  */
 export function permittedOutputSystems() {
-    return [2, 8, 16];
+    return [2];
 }
 
 /**
@@ -57,7 +40,7 @@ export function permittedOutputSystems() {
  * @param {number} outputSystem Výstupní soustava (2, 8, 16).
  * @returns {string} Převod čísla do požadované soustavy nebo "0" pro chybný vstup.
  */
-export function main(A, outputSystem) {
+export function main(A) {
    A = Number(A);
     outputSystem = Number(outputSystem)
     if (isNaN(A) || A < 0) return "0";
@@ -65,14 +48,7 @@ export function main(A, outputSystem) {
     const n = Math.floor(A);
     if (n === 0) return "0";
 
-    switch (outputSystem) {
-        case 2:
-        case 8:
-            return Převod(n, outputSystem);
-        case 16:
-            return PřevodNa16(n);
-        default:
-            return "0";
+ return Převod(n, 2);
     }
-}
+
 
