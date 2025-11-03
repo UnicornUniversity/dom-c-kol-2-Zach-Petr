@@ -58,7 +58,10 @@ export function permittedOutputSystems() {
  * @returns {string} Převod čísla do požadované soustavy nebo "0" pro chybný vstup.
  */
 export function main(A, outputSystem) {
-    if (typeof A !== "number" || isNaN(A) || A < 0) return "0";
+   A = Number(A);
+    outputSystem = Number(outputSystem)
+    if (isNaN(A) || A < 0) return "0";
+
     const n = Math.floor(A);
     if (n === 0) return "0";
 
