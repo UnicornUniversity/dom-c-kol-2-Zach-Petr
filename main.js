@@ -8,6 +8,8 @@ export function Převod(a, s) {
     if (typeof a !== "number" || a < 0) a = 0;
     a = Math.floor(a);
     if (a === 0) return "0";
+    outputSystem = Number(outputSystem);
+    if (![2, 8].includes(outputSystem)) return "0";
     let vysledek = "";
     while (a > 0) {
         vysledek = String(a % s) + vysledek;
