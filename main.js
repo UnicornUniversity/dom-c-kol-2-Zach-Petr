@@ -37,7 +37,7 @@ export function permittedOutputSystems() {
  * Hlavní funkce programu.
  * Převádí číslo do požadované soustavy.
  * @param {number} A Číslo v desítkové soustavě.
- * @param {number} outputSystem Výstupní soustava (2, 8, 16).
+ * @param {number} B Výstupní soustava (2, 8).
  * @returns {string} Převod čísla do požadované soustavy nebo "0" pro chybný vstup.
  */
 export function main(A, B) {
