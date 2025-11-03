@@ -40,16 +40,16 @@ export function permittedOutputSystems() {
  * @param {number} B Výstupní soustava (2, 8).
  * @returns {string} Převod čísla do požadované soustavy nebo "0" pro chybný vstup.
  */
-export function main(A, B) {
+export function main(A, outputSystem) {
    A = Number(A);
-    B = Number(B)
+   outputSystem = Number(outputSystem);
     if (isNaN(A) || A < 0) return "0";
 
     const n = Math.floor(A);
     if (n === 0) return "0";
-if (![2, 8].includes(B)) return "0";
+if (![2, 8].includes(outputSystem)) return "0";
 
- return Převod(n, B);
+ return Převod(n, outputSystem);
     }
 
 
