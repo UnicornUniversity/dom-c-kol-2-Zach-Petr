@@ -1,4 +1,4 @@
-p/**
+/**
  * Převádí nezáporné celé číslo do zvolené soustavy (2).
  * @param {number} a Číslo v desítkové soustavě.
  * @param {number} s Dělitel nové soustavy (2).
@@ -66,8 +66,8 @@ export function main(A, inputSystem, outputSystem) {
     if (n === 0) return "0";
 if (![2, 8, 16].includes(outputSystem)) return "0";
 
-if(outputSystem ===16){
-    retun Převodna16(n);
+if(outputSystem === 16){
+    return Převodna16(n);
 }
     return Převod(n, outputSystem);
     }
