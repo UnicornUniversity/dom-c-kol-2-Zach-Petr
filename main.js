@@ -30,7 +30,7 @@ export function permittedInputSystems() {
  * @returns {number[]} Pole povolených výstupních soustav (2, 8, 16).
  */
 export function permittedOutputSystems() {
-    return [2];
+    return [2, 8];
 }
 
 /**
@@ -40,14 +40,16 @@ export function permittedOutputSystems() {
  * @param {number} outputSystem Výstupní soustava (2, 8, 16).
  * @returns {string} Převod čísla do požadované soustavy nebo "0" pro chybný vstup.
  */
-export function main(A) {
+export function main(A, B) {
    A = Number(A);
+    B = Number(B)
     if (isNaN(A) || A < 0) return "0";
 
     const n = Math.floor(A);
     if (n === 0) return "0";
+if (![2, 8].includes(B)) return "0";
 
- return Převod(n, 2);
+ return Převod(n, B);
     }
 
 
