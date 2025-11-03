@@ -1,7 +1,7 @@
 /**
- * Převádí nezáporné celé číslo do zvolené soustavy (2).
+ * Převádí nezáporné celé číslo do zvolené soustavy (2,8).
  * @param {number} a Číslo v desítkové soustavě.
- * @param {number} s Dělitel nové soustavy (2).
+ * @param {number} s Dělitel nové soustavy (2,8).
  * @returns {string} Číslo převedené do zvolené soustavy.
  */
 export function Převod(a, s) {
@@ -51,7 +51,8 @@ export function permittedOutputSystems() {
  * Hlavní funkce programu.
  * Převádí číslo do požadované soustavy.
  * @param {number} A Číslo v desítkové soustavě.
- * @param {number} B Výstupní soustava (2, 8).
+ * @param {number} inputSystem Soustava vloženého čísla.
+ * @param {number} outputSystem Výstupní soustava (2, 8, 16).
  * @returns {string} Převod čísla do požadované soustavy nebo "0" pro chybný vstup.
  */
 export function main(A, inputSystem, outputSystem) {
