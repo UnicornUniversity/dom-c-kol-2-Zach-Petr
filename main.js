@@ -1,4 +1,4 @@
-/**
+p/**
  * Převádí nezáporné celé číslo do zvolené soustavy (2).
  * @param {number} a Číslo v desítkové soustavě.
  * @param {number} s Dělitel nové soustavy (2).
@@ -20,7 +20,7 @@ export function Převod(a, s) {
  * @param {number} a Číslo v desítkové soustavě.
  * @returns {string} Číslo převedené do zvolené soustavy.
  */
- function PřevodNa16(a){
+export function PřevodNa16(a){
     if(a === 0) return "0";
     const hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     let vysledek = "";
