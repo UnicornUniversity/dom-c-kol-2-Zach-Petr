@@ -2,7 +2,7 @@
  * Převádí nezáporné celé číslo do zvolené soustavy (2,8).
  * @param {number} a Číslo v desítkové soustavě.
  * @param {number} s Dělitel nové soustavy (2,8).
- * @returns {string} Číslo převedené do zvolené soustavy.
+ * @returns {string} Číslo převedené do zvolené soustavyw.
  */
 export function Převod(a, s) {
     if (typeof a !== "number" || a < 0) a = 0;
@@ -53,24 +53,23 @@ export function permittedOutputSystems() {
  * @param {number} A Číslo v desítkové soustavě.
  * @param {number} inputSystem Soustava vloženého čísla.
  * @param {number} outputSystem Výstupní soustava (2, 8, 16).
- * @returns {string} Převod čísla do požadované soustavy nebo "0" pro chybný vstup.
+ * @returns {string} Převod čísla do požadované soustavy nebo "0" pro špatný vstup.
  */
 export function main(A, inputSystem, outputSystem) {
-   A = Number(A);
-      console.log("A =", A, typeof A);
-    console.log("outputSystem =", outputSystem, typeof outputSystem);
+   
     if (isNaN(A) || A < 0) return "0";
-
-    const n = Math.floor(A);
-    if (n === 0) return "0";
+    A = Math.floor(A);
 if (![2, 8, 16].includes(outputSystem)) return "0";
 
 if(outputSystem === 16){
-    return PřevodNa16(n);
+    console.log("Výsledek do 16 soustavy je: " + PřevodNa16(A));
+    return PřevodNa16(A);
 }
     else{
-    return Převod(n, outputSystem);
+        console.log("Výsledek do " + outputSystem + " soustavy je: " + Převod(A, outputSystem));
+    return Převod(A, outputSystem);
     }
+    
     }
 
 
