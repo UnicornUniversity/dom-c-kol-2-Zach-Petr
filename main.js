@@ -5,12 +5,10 @@
  * @returns {string} Číslo převedené do zvolené soustavyw.
  */
 export function Převod(a, s) {
-    if (typeof a !== "number" || a < 0) a = 0;
-    a = Math.floor(a);
     if (a === 0) return "0";
     let vysledek = "";
     while (a > 0) {
-        vysledek = String(a % s) + vysledek;
+        vysledek = (a % s) + vysledek;
         a = Math.floor(a / s);
     }
     return vysledek;
@@ -21,7 +19,6 @@ export function Převod(a, s) {
  * @returns {string} Číslo převedené do zvolené soustavy.
  */
 export function PřevodNa16(a){
-    if(a === 0) return "0";
     const hex = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
     let vysledek = "";
     while(a > 0){
